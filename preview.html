@@ -34,17 +34,26 @@ THE SOFTWARE.</p>
 </footer>
 
 <script>
-    if (window.location.search.split("theme=")[1]) {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('theme')) {
         document.querySelector('.time').textContent= (new Date()).getFullYear();
-        const v = window.location.search.split("theme=")[1];
+        const v = params.get('theme');
         const e = document.createElement('link');
         e.rel="stylesheet";
         e.href='./themes/'+v+'.css';
         document.body.append(e);
+        if (params.get('avatar')) {
+            if (params.get('avatar').toLowerCase() == 'false') {
+                document.querySelector('#gravatar').remove();
+            }
+        }
     } else {
         document.body.style.cssText=`background:#121212;font-family:sans-serif;padding:1rem 2rem;`
         document.body.innerHTML=`
-        <h1 style="color:#fff">Preview a theme by going to the url:<br><p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;'</p></h1>
+        <h1 style="color:#fff">Preview a theme by going to the url:<br><p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;'</p><br>
+        Remove avatar like this:<br>
+        <p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;&&avatar=false'</p>
+        </h1>
         `
     }
 </script>
