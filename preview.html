@@ -36,12 +36,33 @@ THE SOFTWARE.</p>
 <script>
     const params = new URLSearchParams(window.location.search);
     if (params.get('theme')) {
+        var request = new XMLHttpRequest();
+        request.open("GET", `./themes/${params.get('theme')}.css`, true);
+        request.send();
+        request.onload = function() {
+            if (request.status == 404) {
+document.body.style.cssText=`background:#121212;font-family:sans-serif;padding:1rem 2rem;height:100vh`
+document.body.innerHTML=`
+<h1 style="color:#fff">
+    <p style="color:#6D67E4;">Theme not found!</p>
+    <p>The theme "${v}" doesn't exist.</p><br><br>
+    <p style="font-size:16px;">Information {<br>
+        &emsp;Responded with status: ${request.status}<br>
+        &emsp;Status Text: ${request.statusText}<br>
+        &emsp;Headers Received: ${request.HEADERS_RECEIVED}
+        <br>}
+    </p>
+</h1>
+`
+            }
+        }
         document.querySelector('.time').textContent= (new Date()).getFullYear();
         const v = params.get('theme');
         const e = document.createElement('link');
         e.rel="stylesheet";
         e.href='./themes/'+v+'.css';
-        document.body.append(e);
+        e.type='text/css';
+        document.head.append(e);
         if (params.get('avatar')) {
             if (params.get('avatar').toLowerCase() == 'false') {
                 document.querySelector('#gravatar').remove();

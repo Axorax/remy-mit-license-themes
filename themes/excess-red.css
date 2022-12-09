@@ -1,6 +1,6 @@
-/* readme-light theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+/* excess-red theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
  * MIT License - https://axorax.mit-license.org/
- * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=readme-light
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=excess-red
  */
 
  :root {
@@ -9,15 +9,16 @@
  
  body {
    margin: 0;
+   padding: 0;
    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
    line-height: 1.5;
-   background: #FFFFFF;
-   color: #24292f;
+   background: #ffd9d9;
+   color: #fa4e34;
  }
  
  a {
      text-decoration: none;
-     color: #0969da;
+     color: #ff2b2b;
  }
  
  a:hover, a:focus {
@@ -25,22 +26,52 @@
  }
  
  article, footer {
-     width: 51.5rem;
-     max-width: calc(100% - 6rem);
-     margin: 1.2em auto 0 auto;
+     max-width: calc(100% - 8rem);
      border-radius: 5px 5px 0 0;
-     padding: 2rem;
-     border: 1.3px solid #D0D7DE;
      border-bottom: none;
-     font-size: 16.5px;
+     font-size: 20px;
+ }
+
+ article h1, article p:nth-last-child(4n) {
+  background: #8f5e5e;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: .5rem 1rem;
+ }
+
+ article h1 {
+  z-index: 2;
+  padding-left: 3.5rem;
+ }
+
+ article p:nth-last-child(4n) {
+  top: .9rem;
+  font-size: 15px;
+  color: rgb(253, 216, 216);
+ }
+
+ article p:nth-last-child(3n) {
+  margin-top: 7rem!important;
+ }
+
+ article p:not(:nth-last-child(4n)) {
+  position: relative;
+  left: 55%;
+  margin-top: 1rem;
+  transform: translate(-50%);
  }
  
  article p:nth-last-child(2) {
      padding: .8rem 1.2rem;
      border-radius: 7px;
-     background: #F6F8FA;
      font-size: 14px;
+     border-left: 2px solid red;
      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace!important;
+ }
+
+ article p:nth-last-child(3n) {
+  margin: 5em auto 0 auto;
  }
  
  footer {
@@ -48,7 +79,6 @@
      font-size: 15px!important;
      margin: 0 auto 0 auto!important;
      width: 54rem;
-     border-bottom: 1.3px solid #D0D7DE!important;
      max-width: calc(100% - 3.6rem);
      text-align: center;
      padding: 0 .8rem!important;
@@ -61,12 +91,12 @@
  }
  
  h1 {
-   margin-top: 0;
-   color: #24292f!important;
+   color: rgb(252, 205, 205)!important;
    font-weight: normal;
    display: inline;
-   padding: 0 0 3px 0;
    line-height: 36px;
+   font-size: 1.2rem;
+   margin: 0;
  }
  
  article p:first-of-type {
@@ -79,13 +109,14 @@
  
  ::selection {
    background: #2d68fc;
-   color: #fff;
  }
  
  #gravatar {
    position: relative;
-   float: right;
-   margin-bottom: 1em;
-   margin-left: 1em;
-   border: 1.3px solid #D0D7DE;
+   border-radius: 50%;
+   position: fixed;
+   top: 10px;
+   z-index: 3;
+   width: 32px;
+   left: 1rem;
  }
