@@ -35,15 +35,21 @@ THE SOFTWARE.</p>
 
 <script>
     const params = new URLSearchParams(window.location.search);
+    let v = '';
     if (params.get('theme')) {
         var request = new XMLHttpRequest();
-        request.open("GET", `./themes/${params.get('theme')}.css`, true);
+        if (params.get('external') == 'true') {
+            v = params.get('theme')
+        } else {
+            v = `./themes/${params.get('theme')}.css`;
+        }
+        request.open("GET", v, true);
         request.send();
         request.onload = function() {
             if (request.status == 404) {
-document.body.style.cssText=`background:#121212;font-family:sans-serif;padding:1rem 2rem;height:100vh`
+document.body.style.cssText=`background:#121212;font-family:sans-serif;padding:1rem 2rem;`
 document.body.innerHTML=`
-<h1 style="color:#fff">
+<h1 style="color:#fff;">
     <p style="color:#6D67E4;">Theme not found!</p>
     <p>The theme "${v}" doesn't exist.</p><br><br>
     <p style="font-size:16px;">Information {<br>
@@ -57,10 +63,9 @@ document.body.innerHTML=`
             }
         }
         document.querySelector('.time').textContent= (new Date()).getFullYear();
-        const v = params.get('theme');
         const e = document.createElement('link');
         e.rel="stylesheet";
-        e.href='./themes/'+v+'.css';
+        e.href=v;
         e.type='text/css';
         document.head.append(e);
         if (params.get('avatar')) {
@@ -71,9 +76,11 @@ document.body.innerHTML=`
     } else {
         document.body.style.cssText=`background:#121212;font-family:sans-serif;padding:1rem 2rem;`
         document.body.innerHTML=`
-        <h1 style="color:#fff">Preview a theme by going to the url:<br><p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;'</p><br>
+        <h1 style="color:#fff;font-size:1.7rem!important;">Preview a theme by going to the url:<br><p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;'</p><br>
         Remove avatar like this:<br>
         <p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-name&gt;&&avatar=false'</p>
+        For themes outside of this repository use:
+        <p style="color:#6D67E4;">'https://axorax.github.io/mit-license-themes-axorax/preview?theme=&lt;theme-url like https://...&gt;&&external=true'</p>
         </h1>
         `
     }
