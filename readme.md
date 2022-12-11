@@ -18,7 +18,7 @@ Preview a theme by going to the url: https://axorax.github.io/mit-license-themes
 Remove avatar: https://axorax.github.io/mit-license-themes-axorax/preview?theme=[theme-name]&&avatar=false
 
 Preview a theme that is not included in this repository:
-https://axorax.github.io/mit-license-themes-axorax/preview?theme=[theme-url like https://example.com/theme.css]&&external=true
+https://axorax.github.io/mit-license-themes-axorax/preview?theme=[theme-url-like-https://example.com/theme.css]&&external=true
 
 Replace the '[]' with the correct details.
 
