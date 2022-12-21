@@ -4,9 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MIT License Themes</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    under construction
+
+    <main>
+
+        <div class="🛬">
+            <span class="✨">Making licenses look pretty.</span>
+            <h1>Dedicated to make themes for mit-license.org like</h1>
+            <div class="🤝"></div>
+            <div class="😩">
+                <button class="🎁">Explore themes</button>
+                <a href="https://patreon.com/axorax" target="_blank"><button class="🎁 💬">Donate</button></a>
+            </div>
+        </div>
+
+        <section class="💻">
+            <div class="title">Themes:</div>
+            <ul class="◉">
+            </ul>
+        </section>
+
+    </main>
+
+    <script>
+        const s = document.querySelector('.🤝'),
+        ul = document.querySelector('.◉');
+        let sn = 0,
+        sn2 = 0,
+        sTime = 0;
+        fetch('./list.json')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(() => {
+                const d = data[sn2].replace('.css', '');
+                const li = document.createElement('li');
+                li.innerHTML=`
+                <a href="https://axorax.github.io/mit-license-themes-axorax/preview?theme=${d}" target="_blank">${d}</a>
+                `
+                ul.appendChild(li)
+                sn2++;
+            })
+            function _landing() {
+                data.forEach(function() {
+                    const v = data[sn].replace('.css', '')
+                    setTimeout(() => {
+                        s.textContent = v;
+                    }, sTime)
+                    sn++;
+                    sTime+=1000;
+                    if (sn == data.length) {
+                        sTime=0;
+                        sn=0;
+                        setTimeout(() => {
+                            _landing();
+                        }, Number(Number(String(String(data.length) + '000')) + 2000))
+                    }
+                })
+            }
+            _landing();
+        })
+    </script>
+
 </body>
 </html>

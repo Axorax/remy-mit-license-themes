@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "MIT License Themes - Font: Heebo";
+    src: url("./Heebo-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MIT License Themes - Font: Heebo', sans-serif;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    background: #050505;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+}
+
+.🛬 {
+    height: calc(100vh + 6px);
+    background: linear-gradient(#050505, #0E1114);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #2d588a;
+}
+
+.✨ {
+    color: #3F8CE2;
+    font-size: 15.5px;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.2rem;
+}
+
+h1 {
+    font-size: 2.6rem;
+    max-width: 100%;
+    width: 45rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.🤝 {
+    color: #cae3ff;
+    font-size: 1.6rem;
+    width: 100%;
+    background: #2d588a34;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+    border: 2px solid #2d588a;
+    border-left: none;
+    border-right: none;
+}
+
+.🎁 {
+    border:  none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.😩 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.7rem;
+}
+
+.😩 button {
+    padding: .6rem 1.9rem;
+    background: #3F8CE2;
+    transition: background 400ms;
+}
+
+.😩 button:hover {
+    background: #306bad;
+}
+
+.😩 button:focus {
+    background: #306bad;
+    outline-offset: 3px;
+    outline: 1.5px solid #306bad;
+}
+
+.😩 .💬 {
+    background: #00DE9A;
+    color: #050505;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.😩 .💬:hover {
+    background: #00b981;
+}
+
+.😩 .💬:focus {
+    background: #00b981;
+    outline-color: #00b981;
+}
+
+.💻 {
+    margin: 1rem 2rem;
+}
+
+.💻 .title {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+ul {
+    margin-left: 3rem;
+}
+
+ul li {
+    margin: .2rem 0;
+}
+
+ul li a {
+    font-size: 18px;
+    color: #3F8CE2;
+    text-decoration: underline;
+}
+
+ul li a:hover {
+    color: #fff;
+}
