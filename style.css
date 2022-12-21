@@ -3,6 +3,10 @@
     src: url("./Heebo-VariableFont_wght.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
