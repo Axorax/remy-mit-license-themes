@@ -35,6 +35,7 @@ THE SOFTWARE.</p>
 </footer>
 
 <script>
+    const donateTem = `<br><a style="color:#F56EB3;text-decoration:underline;cursor:pointer" href="https://patreon.com/axorax" target="_blank">Donate to this project</a>`
     const params = new URLSearchParams(window.location.search);
     let v = '';
     if (params.get('theme')) {
@@ -59,6 +60,7 @@ document.body.innerHTML=`
         &emsp;Headers Received: ${request.HEADERS_RECEIVED}
         <br>}
     </p>
+    ${donateTem}
 </h1>
 `
             }
@@ -82,6 +84,7 @@ document.body.innerHTML=`
         <p style="color:#6D67E4;">'https://axorax.github.io/remy-mit-license-themes/preview?theme=&lt;theme-name&gt;&&avatar=false'</p>
         For themes outside of this repository use:
         <p style="color:#6D67E4;">'https://axorax.github.io/remy-mit-license-themes/preview?theme=&lt;theme-url like https://...&gt;&&external=true'</p>
+        ${donateTem}
         </h1>
         `
     }
