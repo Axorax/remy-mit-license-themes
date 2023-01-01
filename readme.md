@@ -20,6 +20,7 @@ Currently available themes:
 * united colors - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=united-colors&&avatar=true) (by [@axorax](https://github.com/Axorax))
 * official document - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=official-document&&avatar=true) (by [@axorax](https://github.com/Axorax)) *Available Types: [official document roboto](https://axorax.github.io/remy-mit-license-themes/preview?theme=official-document-roboto&&avatar=true)
 * circle - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=circle&&avatar=true) (by [@axorax](https://github.com/Axorax))
+* mi-na-kiut - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=mi-na-kiut&&avatar=true) (by [@axorax](https://github.com/Axorax))
 
 Preview a theme by going to the url: https://axorax.github.io/remy-mit-license-themes/preview?theme=[theme-name]
 
